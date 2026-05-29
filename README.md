@@ -1,8 +1,8 @@
-# PoE 2 Claude Code Pack — Runes of Aldur (0.5)
+# poe2-claude — Runes of Aldur (0.5)
 
 A shared Claude Code project for playing **Path of Exile 2 patch 0.5 "Return of the Ancients"** with the **Runes of Aldur** challenge league.
 
-This pack gives Claude Code:
+This project gives Claude Code:
 - Up-to-date knowledge about patch 0.5 mechanics, league content, and balance changes.
 - Pre-configured MCP servers for live data (currency prices, wiki, datamined items, ladder meta).
 - Slash commands for common workflows (character analysis, price check, build validation, `.build` file management).
