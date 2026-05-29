@@ -38,12 +38,16 @@ These are explicitly listed in the **official 0.5.0 patch notes** ([pathofexile.
 - **Trial of Chaos** unlocks in **Act 3** (Temple/Trial of Chaos via a key from the Trialmaster). First clear grants **2 more points** (3rd & 4th ascendancy points). ([Maxroll — Trials of Ascendancy](https://maxroll.gg/poe2/getting-started/trials-of-ascendancy), checked 29 May 2026)
 - Recommended path: Sekhemas in Act 2 for points 1–2, then Trial of Chaos in Act 3 for points 3–4; higher points (5–8) come from higher-level/harder trial runs in endgame. ([Maxroll](https://maxroll.gg/poe2/getting-started/trials-of-ascendancy), checked 29 May 2026)
 
-> `[Unverified — check wiki in-session]` Exact 0.5 *level requirements / entry-key levels* for each trial floor. The Maxroll guide may predate 0.5 tuning. Confirm the specific numbers with `poe2_wiki_page` before quoting them to a teammate.
+> **Verified trial gates** (`poe2_wiki_page "Ascension trials"`, checked 29 May 2026): first Sekhemas = Area Level **22+ / 1 floor**; first Chaos = Area Level **39+ / 4 rounds**. Full tier table (levels, floors, rounds for all 8 points) is in **`docs/15-ascendancy-trials.md`** — use it, don't re-derive from memory.
 
 ### Resistance penalty (campaign tax)
 
 - Completing acts imposes a **negative all-elemental-resistance penalty** (a "campaign tax"); **chaos resistance is not penalized**. Boss kills in campaign zones drop **single-use permanent resistance bonus items** that partially offset it. ([Mobalytics — Resistances guide](https://mobalytics.gg/poe-2/guides/resistances), checked 29 May 2026)
-- `[Unverified for 0.5 — check wiki in-session]` The **exact penalty per act and the total**. Older guides cite "-10% per act, up to -60% over six acts" and "+20% recoverable from campaign bonuses" — but those numbers reference a **six-act** structure and **pre-0.5** tuning. With 0.5 sitting at four acts + interludes, **do not quote a specific total from memory.** Pull it live: `poe2_wiki_search "resistance penalty"` then `poe2_wiki_page`.
+- **The penalty scales with zone level** (verified live on the wiki **Interlude** page, `poe2_wiki_page "Interlude"`, checked 29 May 2026):
+  - Zone Level **54–59 → −40%** all elemental resistance
+  - Zone Level **60–64 → −50%**
+  - Zone Level **65+ → −60%**
+- So a teammate entering endgame should plan to **cap at 75% with roughly +60% resistance to overcome** the campaign tax. ([poe2wiki — Interlude](https://www.poe2wiki.net/wiki/Interlude), checked 29 May 2026.) If a teammate sees a different number for an earlier act, pull the specific zone's page live — the table above is the Interlude/late-campaign tier.
 
 ---
 
@@ -56,8 +60,8 @@ For every pattern below: **translate game terms to English with underscores firs
 | "What's the **boss of Act _N_**?" / "How do I beat _X_?" | `poe2_wiki_search "Act N"` → `poe2_wiki_page` on the act or boss page | Act 3 was reordered in 0.5; don't trust remembered order. |
 | "**Where is quest/NPC _X_**?" / "Where do I turn in _Y_?" | `poe2_wiki_search "<quest name>"` → `poe2_wiki_page` | Some zones were cut/shortened in 0.5 (Dreadnaught Vanguard gone, Waterways changed). |
 | "**What level should I be** for Act _N_ / for maps?" | `poe2_wiki_search "<act> walkthrough"` → `poe2_wiki_page` | Treat any level target as `[Unverified]` unless the page is 0.5-current; campaign was shortened in 0.5, so pre-0.5 targets may be high. |
-| "**How much resistance** do I need by Act _N_?" / "Why are my resists negative?" | `poe2_wiki_search "resistance penalty"` → `poe2_wiki_page` | Per-act penalty + total is `[Unverified for 0.5]` — pull live, never quote the old -60% from memory. |
-| "**Where do I unlock my Ascendancy / Trial**?" | Confirmed above (Sekhemas = Act 2, Chaos = Act 3). For floor levels/keys → `poe2_wiki_page` "Trial of the Sekhemas" / "Trial of Chaos" | Point totals confirmed; entry-level numbers `[Unverified for 0.5]`. |
+| "**How much resistance** do I need by Act _N_?" / "Why are my resists negative?" | Answer from §0 verified table (zone Lvl 54-59 → -40%, 60-64 → -50%, 65+ → -60%), cite the wiki Interlude page. For a specific earlier zone, `poe2_wiki_page` on that zone. | Endgame target: cap 75%, plan ~+60% to overcome the late tax. |
+| "**Where do I unlock my Ascendancy / Trial**?" | Sekhemas = Act 2 (Lvl 22+), Chaos = Act 3 (Lvl 39+); full tier/level table in `docs/15-ascendancy-trials.md`. | Verified 29 May 2026 via wiki. 8 points = 4 tiers × 2. |
 | "**Which vendor** sells _X_ / has the gem I need?" | `poe2_wiki_search "<vendor/NPC>"` → `poe2_wiki_page` | Vendor offers can shift per patch; confirm. |
 | "**Is there a campaign unique** for _slot/build_?" | `poe2_db_lookup term="<Item_Name>"` (underscores, see `docs/02-mcp-quirks.md`) | If `poe2_db_lookup` returns nothing on a 0.5 item, **say "not found / not yet indexed"** — do NOT invent (CLAUDE.md §3, §6). |
 | "**What skill gems** are available by Act _N_?" | `poe2_db_lookup term="<Skill_Name>"` for a specific gem; `poe2_wiki_page` for availability | Roman numerals for ranked skills (`_I`, `_II`). |

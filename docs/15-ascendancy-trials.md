@@ -36,33 +36,48 @@ You complete trials to unlock your Ascendancy class and earn Ascendancy passive 
 Tell the teammate: both paths grant the same points; pick whichever your build survives more
 comfortably, then verify the current room/affix details on the wiki (they get rebalanced).
 
+> **A third trial is planned but NOT in the game yet.** The wiki notes a future **Trial of the
+> Ancestors** (Karui-themed, tied to the Halls of the Dead in Act 4) — announced in dev
+> interviews, no mechanics revealed, **not implemented**. If a teammate asks about a third
+> trial: it doesn't exist yet; only Sekhemas and Chaos are live. *Source: poe2wiki — Ascension
+> trials, checked 29 May 2026.*
+
 ---
 
 ## 2. How ascendancy points are earned (the 4-tier structure)
 
 A character ascends fully by completing **4 tiers**, each granting **2 ascendancy points**,
-for **8 points total**. *Source: PoE2 Wiki, Ascension trials; Maxroll Trials of Ascendancy
-guide — checked 29 May 2026.*
+for **8 points total**. You can repeat the **same** trial type for all 8 points, or mix the
+two. *Confirmed live via `poe2_wiki_page "Ascension trials"` — checked 29 May 2026.*
 
-The two trials are **interchangeable** for earning points — you can mix and match. A commonly
-cited route (per Maxroll's guide; **verify level/tier requirements live, these are exactly
-the kind of numbers GGG rebalances**):
+The full requirement table below is **verified from the official wiki** (`poe2_wiki_page
+"Ascension trials"`, checked 29 May 2026). Points 1–4 can be earned with quest tokens
+(**Balbala's Barya** / **Chimeral Inscribed Ultimatum**, fixed area level, re-attemptable for
+free); points 5–8 require **regular tradeable tokens** (**Djinn Barya** / **Inscribed
+Ultimatum**) at the area levels shown:
 
-| Tier | Points | Typical unlock (verify on wiki) |
-|------|--------|----------------------------------|
-| 1 | 1–2 | Trial of the Sekhemas via the early Barya quest (Act 2) |
-| 2 | 3–4 | Trial of Chaos via the Inscribed Ultimatum quest (Act 3) |
-| 3 | 5–6 | Higher-level **Djinn Barya** (Sekhemas) **OR** a higher-level Inscribed Ultimatum (Chaos) |
-| 4 | 7–8 | Highest-level Djinn Barya (Sekhemas, +pinnacle boss) **OR** Inscribed Ultimatum with all three Fate fragments (Chaos) |
+| Ascension | Total pts | Trial of the Sekhemas | Trial of Chaos |
+|---|---|---|---|
+| 1 | 2 | Area Level **22+**, **1 Floor** (Balbala's / Djinn Barya) | Area Level **39+**, **4 Rounds** (Chimeral / Inscribed Ultimatum) |
+| 2 | 4 | Area Level **45+**, **2 Floors** (Djinn Barya) | Area Level **60+**, **7 Rounds** (Inscribed Ultimatum) |
+| 3 | 6 | Area Level **60+**, **3 Floors** (Djinn Barya) | Area Level **75+**, **10 Rounds** (Inscribed Ultimatum) |
+| 4 | 8 | Area Level **75+**, **4 Floors** (Djinn Barya) | Area Level **75+**, **10 Rounds + defeat The Trialmaster** (needs the 3 Fate keys: Deadly / Cowardly / Victorious) |
 
-*Source for the tier/route table: Maxroll, "Trials of Ascendancy Guide" — checked 29 May 2026.*
+*Source: poe2wiki — Ascension trials, https://www.poe2wiki.net/wiki/Ascension_trials, checked
+29 May 2026.*
 
-> **Route the exact numbers to the wiki.** The specific **level requirements** (e.g.
-> "Level 60+ Djinn Barya", "Level 75+", "Level 65+ Ultimatum"), **floor counts**, and the
-> **three Fate fragment** names for the final Chaos tier are guide-sourced and patch-sensitive.
-> When a teammate needs the precise gate for tier 3/4, use `poe2_wiki_page` on
-> **"Ascension trials"** / **"Trial of the Sekhemas"** / **"Trial of Chaos"** or
-> `poe2_db_lookup`, and cite it. Do **not** state these numbers from memory.
+Notes (also from that page):
+- **Points 3–4 (Ascension 2) can be earned the easy way:** instead of the harder Tier-2 of the
+  trial you already did, do the **Tier-1 (quest) version of the *other* trial** — typically much
+  easier and available earlier.
+- You must reach a **minimum character level** (usually a few levels below the area level) to
+  attempt a trial.
+- **Respec:** to change ascendancy you must re-complete a trial of **at least the highest
+  difficulty you've already done**, then use the Altar of Ascendancy with all ascendancy
+  passives unallocated.
+
+> These numbers were rebalanced before and may change again — if a teammate hits a different
+> gate in-game, trust the live `poe2_wiki_page` over this table and flag the doc (CLAUDE.md §8).
 
 ---
 
