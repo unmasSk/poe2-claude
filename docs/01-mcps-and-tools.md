@@ -91,7 +91,7 @@ Three MCP servers are configured. Use this file to pick the right tool for each 
 | `clear_cache` | Clear cached data |
 
 **Repo:** https://github.com/HivemindOverlord/poe2-mcp  
-**Auth for trade tools only:** Playwright + POESESSID cookie via `python -m poe2_mcp.scripts.setup_trade_auth`
+**Auth for trade tools only:** Playwright + POESESSID cookie via the in-Claude `setup_trade_auth` MCP tool (install `playwright` + `playwright install chromium` first). The standalone CLI `python -m poe2_mcp.scripts.setup_trade_auth` does **not** exist in the published package — use the MCP tool.
 
 **Upstream packaging bugs (confirmed 29 May 2026, version 1.0.0):**
 

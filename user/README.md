@@ -64,7 +64,7 @@ See `user/_template.md` for the template. The essential fields:
 ## What does NOT go in the personal file
 
 - **Passwords** — never.
-- **POESESSID cookie** — this is set up via `python -m poe2_mcp.scripts.setup_trade_auth` and stored by the MCP server, not in any markdown file.
+- **POESESSID cookie** — this is set up via the in-Claude `setup_trade_auth` MCP tool (not the non-existent `python -m poe2_mcp.scripts.setup_trade_auth` CLI) and stored by the MCP server, not in any markdown file.
 - **API keys** — there are no API keys needed for the standard tool set (`poe2`, `poe2-optimizer`); only `POE2SCOUT_CONTACT_EMAIL` for poe2scout (set that in `.mcp.json` directly).
 - **Personal info that isn't relevant to PoE** — keep Claude focused on PoE.
 

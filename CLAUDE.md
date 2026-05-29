@@ -110,12 +110,14 @@ Run the check (§0.1) once more. If it returns `SETUP_OK`, tell the user:
 
 ### 0.5. Optional: HivemindOverlord trade auth
 
-After the user has reopened `claude` and the MCPs are working, if they want to use `search_trade_items` (searches the official trade site), tell them to run **outside `claude`**:
+After the user has reopened `claude` and the MCPs are working, if they want to use `search_trade_items` (searches the official trade site), the flow is:
+1. They install the browser dependency **outside `claude`** (one time):
 ```bash
 pip3 install playwright && playwright install chromium
-python3 -m poe2_mcp.scripts.setup_trade_auth
 ```
-A browser opens, they log into pathofexile.com, the session is saved. **Do NOT try to launch this from within Claude Code** — Playwright + interactive browser auth doesn't work well from a CLI tool's subprocess.
+2. Then, **inside `claude`**, invoke the `setup_trade_auth` MCP tool (from the optimizer server). A browser opens, they log into pathofexile.com, the session (POESESSID) is saved.
+
+**Note (verified 29 May 2026):** the standalone CLI `python -m poe2_mcp.scripts.setup_trade_auth` does **not** exist in the published package (no `scripts` module; the package's top-level module is `src`, not `poe2_mcp`). Trade auth is only reachable via the `setup_trade_auth` MCP tool. Do not tell the user to run the non-existent CLI command.
 
 ### 0.6. Optional: personal context file
 

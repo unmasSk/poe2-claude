@@ -81,15 +81,16 @@ If unsure, ask the user.
 
 ### Requires one-time setup
 
-This tool needs Playwright + a POESESSID cookie. The user must run:
+This tool needs Playwright + a POESESSID cookie. The user installs the browser dependency once, outside Claude:
 
 ```bash
 pip install playwright
 playwright install chromium
-python -m poe2_mcp.scripts.setup_trade_auth
 ```
 
-A browser opens, the user logs in to pathofexile.com, and the session is saved.
+Then, **inside Claude**, invoke the `setup_trade_auth` MCP tool. A browser opens, the user logs in to pathofexile.com, and the session is saved.
+
+**Note (verified 29 May 2026):** the standalone CLI `python -m poe2_mcp.scripts.setup_trade_auth` does NOT exist in the published `poe2-mcp` package (the top-level module is `src`, and there is no `scripts` submodule). Trade auth is only reachable via the `setup_trade_auth` MCP tool.
 
 ### If it fails
 
