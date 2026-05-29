@@ -1,6 +1,6 @@
 ---
 description: Find the cheapest way to gain a target stat on a character (e.g. crit chance, life, fire res)
-allowed-tools: mcp__poe2-optimizer__analyze_character, mcp__poe2-optimizer__import_poe_ninja_url, mcp__poe2-optimizer__search_mods_by_stat, mcp__poe2-optimizer__get_uniques_by_base_name, mcp__poe2-optimizer__analyze_passive_tree, mcp__poe2__poe2_db_lookup, mcp__poe2__poe2_item_price
+allowed-tools: mcp__poe2-optimizer__analyze_character, mcp__poe2-optimizer__import_poe_ninja_url, mcp__poe2-optimizer__search_mods_by_stat, mcp__poe2scout__get_uniques_by_base_name, mcp__poe2-optimizer__analyze_passive_tree, mcp__poe2__poe2_db_lookup, mcp__poe2__poe2_item_price
 ---
 
 Find the cheapest upgrade to gain more of the stat: $ARGUMENTS

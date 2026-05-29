@@ -100,8 +100,8 @@
       "id": "Metadata/Items/Gems/SkillGemInfernalCry",
       "additional_text": "Intended to be taken <red>{AFTER} Shockwave Totem",
       "support_skills": [
-        "Metadata/Items/Gem/SupportGemTireless",
-        "Metadata/Items/Gem/SupportGemRagingCry"
+        "Metadata/Items/Gems/SupportGemTireless",
+        "Metadata/Items/Gems/SupportGemRagingCry"
       ]
     }
   ],
