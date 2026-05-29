@@ -53,6 +53,8 @@ When working in this project, Claude has access to the following:
 
 Full inventory in `docs/01-mcps-and-tools.md`. Tool quirks (Roman numerals, underscores, language parameters) in `docs/02-mcp-quirks.md` — **read before any first tool call.**
 
+**The MCP servers are not the whole world.** They are the fast path, not the only path. They lag the community (hours-to-days early in a league) and don't cover evolving consensus. Claude also has `WebSearch`/`WebFetch` and **must use them** when the MCPs come up empty/stale or when the question is about live community knowledge — the official wiki, **r/PathOfExile2** and **r/PathOfExileBuilds**, the pathofexile.com forums, and reputable creator guides. See Hard Rule #9 in `CLAUDE.md`. Anything from the community is `[Inference]`, cited with its date.
+
 ### 3.2 Six pre-built slash commands (in `.claude/commands/`)
 
 | Command | What it does |
@@ -124,6 +126,46 @@ These are the question patterns the pack handles well. They're documented in det
 "¿Cómo subo más crítico en mi Cazadora?" / "How do I get more crit on my Huntress?"
 
 → Same workflow. Claude translates game terms to English internally (`docs/11-glossary-es-en.md`), calls tools in English, responds in the user's language.
+
+---
+
+## 4b. The data is a moving target — the learn-and-revalidate loop
+
+This is core to how the pack works, not an afterthought. PoE 2 0.5 data changes constantly: prices move by the hour at league start, the wiki documents new mechanics days late, build consensus forms over the first weeks, bugs get patched, and the MCP data sources catch up to the new league on their own schedule. A pack that only *reads* live data but never *remembers* what it learned would re-discover the same things every session and would keep repeating findings that have since gone stale.
+
+So the working pipeline has a feedback loop:
+
+```
+        ┌─────────────────────────────────────────────┐
+        │  Question                                    │
+        │     ↓                                        │
+        │  Check memory / docs for a relevant fact     │
+        │     ↓                                        │
+        │  Is it league-specific & could it have       │
+        │  changed? ──yes──► RE-VERIFY with a live     │
+        │     │              tool or web look-up       │
+        │     no                                       │
+        │     ↓                                        │
+        │  Answer using MCP tools → and if they're     │
+        │  empty/stale, WebSearch the wiki/Reddit/     │
+        │  forums (Hard Rule #9)                       │
+        │     ↓                                        │
+        │  Discovered something new/durable?           │
+        │  ──yes──► OFFER TO PERSIST it to memory/      │
+        │           and/or the relevant docs/ file     │
+        │     ↓                                        │
+        │  Respond, cite source + date, label          │
+        │  community consensus as [Inference]          │
+        └─────────────────────────────────────────────┘
+```
+
+Two halves, both required (full rules in `CLAUDE.md` Hard Rule #10):
+
+1. **Capture new knowledge.** When a session surfaces something durable — a now-indexed price baseline, a freshly documented mechanic, a build consensus, a confirmed bug, an upstream fix, a corrected assumption — offer to write it to project `memory/` and/or the matching `docs/` file. Don't let hard-won findings evaporate at session end.
+
+2. **Re-verify before trusting stored facts.** Memories and docs record what was true *when written*. Before relying on a league-specific stored fact that could have moved (a price, the meta, "X is broken", "Y isn't indexed yet"), re-check it live. Upstream packages get patched; indexing catches up; the meta settles. Trust the live tool over the stale doc, and update or delete the stale entry.
+
+This is why the pack keeps a `memory/` store and why `docs/` is treated as living, not frozen. The "Last verified content date" in `CLAUDE.md` and per-fact dates in memory exist precisely so staleness is visible.
 
 ---
 

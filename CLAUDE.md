@@ -147,6 +147,13 @@ If `CLAUDE.local.md` does not exist at the project root, offer (don't force) to 
 
 8. **Each user has their own character and account.** Do not assume the user from one message is the same character context as before unless they confirm it. Personal account/character names are in each user's local `CLAUDE.local.md` or `user/<username>.md` — never committed to the shared repo.
 
+9. **The MCP tools are not the only sources. Always be willing to look further.** The three MCP servers cover prices, datamined data, and the official-ish wiki — but they are incomplete and lag behind the community, especially early in a league. When the MCPs return nothing, return stale/empty data, or the question is about evolving consensus (best leveling path, is-this-build-good, is-this-bug-real, what's-the-current-strat), **use `WebSearch`/`WebFetch` to check live community sources**: the official PoE 2 wiki, **r/PathOfExile2** and **r/PathOfExileBuilds** on Reddit, the official pathofexile.com forums, and reputable creators' guides. Cite which source you used and its date. Community consensus is `[Inference]`, not fact — label it so. Never let "the MCP didn't have it" be the end of the search if a web look-up could answer it.
+
+10. **Learn-and-revalidate loop (the data is a moving target).** League data changes by the hour early on, then by the day. Treat every fact as having a freshness window:
+   - **When you discover something new** in a session — a price that just got indexed, a mechanic the wiki just documented, a build consensus, a confirmed bug, a corrected assumption — **offer to persist it**: write it to project memory (`memory/`, see the memory instructions) and/or to the relevant `docs/` file so future sessions start from it. Don't silently drop hard-won findings.
+   - **When a memory or doc gives you a league-specific fact, re-verify it before relying on it** if it could have changed (prices, meta, "X is broken", "Y isn't indexed yet"). Memories record what was true when written. If a memory says "the items DB is empty" or "the league isn't indexed yet", check whether that's *still* true — upstream patches and indexing catch up.
+   - **Prefer updating an existing memory/doc over creating a duplicate**, and delete/flag anything you discover is now wrong (trust the live tool over the stale doc — Hard Rule applies in §8 of this file too).
+
 ---
 
 ## 2. How to use the docs
