@@ -24,9 +24,14 @@ python -c "import importlib.metadata as m; m.distribution('poe2-mcp')" 2>/dev/nu
 grep -q "ABSOLUTE_PATH_TO_" .mcp.json 2>/dev/null && errs+=(".mcp.json has placeholders")
 grep -q "YOUR_EMAIL_HERE" .mcp.json 2>/dev/null && errs+=("email not set in .mcp.json")
 grep -q "GENERATED_PER_USER" .mcp.json 2>/dev/null && errs+=("optimizer keys not generated")
+# Catch optimizer keys that exist but still look like a dummy/placeholder value (validates value, not just presence)
+grep -Eq "\"SECRET_KEY\"[[:space:]]*:[[:space:]]*\"(GENERATED_PER_USER[A-Z_0-9]*|REPLACE_ME|CHANGEME|changeme|xxx+|0{16,}|)\"" .mcp.json 2>/dev/null && errs+=("optimizer SECRET_KEY looks like a placeholder")
+grep -Eq "\"ENCRYPTION_KEY\"[[:space:]]*:[[:space:]]*\"(GENERATED_PER_USER[A-Z_0-9]*|REPLACE_ME|CHANGEME|changeme|xxx+|0{16,}|)\"" .mcp.json 2>/dev/null && errs+=("optimizer ENCRYPTION_KEY looks like a placeholder")
 if [ ${#errs[@]} -eq 0 ]; then echo "SETUP_OK"; else printf "SETUP_FAIL:%s\n" "${errs[@]}"; fi
 '
 ```
+
+**What this check does and does not catch.** It verifies every dependency is *present* and that no field (paths, email, optimizer keys) still holds a known placeholder/dummy value. It **cannot** confirm the MCP servers actually *start* — `poe2-mcp` only loads when Claude Code boots the MCP, so a runtime failure (a malformed key, the un-awaited-coroutine bug) is only visible after reopening `claude`. A true liveness test would mean a JSON-RPC `initialize` handshake — too heavy for a silent per-session pre-flight — so this stays a static presence-and-placeholder scan, and the §0.4 "reopen `claude`" step is what surfaces any startup error.
 
 ### 0.2. If output is `SETUP_OK`: stay silent, attend the user's message normally.
 
@@ -177,6 +182,9 @@ This project has detailed documentation in `docs/`. **Do not load everything at 
 | Spanish ↔ English game term mapping | `docs/11-glossary-es-en.md` |
 | Anti-hallucination rules (memorize these) | `docs/12-anti-hallucination.md` |
 | **`.build` planner files (read/validate/translate/template)** | **`docs/13-build-file-format.md`** |
+| Campaign questions (acts, bosses, level/res targets, where trials unlock) | `docs/14-campaign-guide.md` (router — routes to live wiki) |
+| Ascendancy Trials (Sekhemas vs Chaos, Honour, 0.5 changes) | `docs/15-ascendancy-trials.md` |
+| Known upstream tooling bugs/limitations + when to re-verify | `docs/KNOWN-ISSUES.md` |
 
 **Mandatory first reads on any new session:** `docs/PROJECT.md` (the "lore" of the project — what this pack is and how to think in it), `docs/02-mcp-quirks.md`, and `docs/12-anti-hallucination.md`. They are short. They prevent the most common failure modes.
 

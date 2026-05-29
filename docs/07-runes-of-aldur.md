@@ -35,7 +35,7 @@ The challenge league of patch 0.5. NPC is **Farrow**, a young blacksmith on a qu
 - The endgame hub is **The Ruins of Kingsmarch**, located **south-east** of the Atlas starting location.
 - Largely destroyed in the lore — now lies off the coast on the Atlas map.
 - **Verisium meteor** has hit the area, scattering Kalguuran tech.
-- **Grand Expeditions** (formerly known as **Logbooks** in PoE 1 / earlier coverage):
+- **Grand Expeditions** (also referred to as **Logbooks** in some coverage):
   - Run by Farrow + Expedition team.
   - Take place across the **Uncharted Seas** — unveils a section of ocean with islands to explore.
   - Many **new underground areas** can be uncovered during Expeditions.

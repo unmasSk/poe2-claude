@@ -152,7 +152,11 @@ poe2-claude/
 │   ├── 10-passive-tree-changes.md
 │   ├── 11-glossary-es-en.md
 │   ├── 12-anti-hallucination.md
-│   └── 13-build-file-format.md     # .build planner JSON format + JSON Schema
+│   ├── 13-build-file-format.md     # .build planner JSON format + JSON Schema
+│   ├── 14-campaign-guide.md        # Campaign router (Acts 1-4 + trials), wiki-sourced
+│   ├── 15-ascendancy-trials.md     # Sekhemas vs Chaos trials, wiki-sourced
+│   └── KNOWN-ISSUES.md             # Verified upstream tooling limitations (team-shared)
+├── LICENSE                         # MIT
 ├── examples/
 │   ├── example-titan-warrior.build  # Official GGG sample
 │   └── example-spirit-walker.build  # Spirit Walker template (Inferred IDs)
@@ -230,8 +234,24 @@ cp .mcp.json.canonical .mcp.json
 claude
 ```
 
-> **Why the optimizer entry looks unusual.** The published `poe2-mcp` package has upstream packaging bugs: its console script is broken, its module is named `src` (not `poe2_mcp`), and it needs `SECRET_KEY`/`ENCRYPTION_KEY` env vars that aren't documented. The `.mcp.json.canonical` template already encodes the working invocation (`python -m src.mcp_server` + the two keys), so just fill in the placeholders. Details in [`docs/01-mcps-and-tools.md`](docs/01-mcps-and-tools.md).
+> **Why the optimizer entry looks unusual.** The published `poe2-mcp` package has upstream packaging bugs: its console script is broken, its module is named `src` (not `poe2_mcp`), and it needs `SECRET_KEY`/`ENCRYPTION_KEY` env vars that aren't documented. The `.mcp.json.canonical` template already encodes the working invocation (`python -m src.mcp_server` + the two keys), so just fill in the placeholders. Details in [`docs/01-mcps-and-tools.md`](docs/01-mcps-and-tools.md) and [`docs/KNOWN-ISSUES.md`](docs/KNOWN-ISSUES.md).
+
+### Reproducibility (pinned versions)
+
+The manual install pulls the latest version of each dependency. The documented workarounds (the `python -m src.mcp_server` optimizer entry, the key generation, the `dist/index.js` build steps) were verified against **specific versions on 29 May 2026**:
+
+- **`poe2-mcp`** (HivemindOverlord optimizer): pip `poe2-mcp==1.0.0`
+- **`poe2-mcp-server`** (sergeyklay): git commit `d2c9a7e`
+- **`poe2scout-mcp`** (vanzan01): git commit `14187e6`
+
+Newer releases may *fix* the documented bugs — or *break* the workarounds. If a fresh install misbehaves, pin to the versions above and re-verify before debugging further:
+
+```bash
+pip install poe2-mcp==1.0.0
+git -C ../mcps/poe2-mcp-server checkout d2c9a7e
+git -C ../mcps/poe2scout-mcp checkout 14187e6
+```
 
 ## License & disclaimer
 
-Community project, not affiliated with Grinding Gear Games or Anthropic. Path of Exile is a trademark of GGG. The MCP servers referenced are third-party community projects.
+Licensed under the [MIT License](LICENSE). Community project, not affiliated with Grinding Gear Games or Anthropic. Path of Exile is a trademark of GGG. The MCP servers referenced are third-party community projects.

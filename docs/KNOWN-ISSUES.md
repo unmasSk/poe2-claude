@@ -1,0 +1,27 @@
+# Known Issues — Upstream Tooling Limitations
+
+This is a **versioned, team-shared record** of upstream tooling limitations that *we verified ourselves* by running commands in this project. Every entry below is a **fact about the tooling** (MCP servers, CLIs, data feeds), established empirically — **not** a game fact, and not something pulled from web research.
+
+**How to use this file (learn-and-revalidate loop):** Upstream packages get patched, data feeds catch up, and league conditions change. **Each entry has a "Re-check when" trigger. When that trigger fires, someone on the team must re-verify the issue by re-running the relevant command and then update the Status (and the "Last verified" line below).** Do not assume an entry is still true just because it's written here — these are snapshots, not permanent truths. If you re-verify and the behavior changed, edit the row, note the new date, and tell the team.
+
+**Last verified:** 29 May 2026 (Runes of Aldur league launch day).
+
+---
+
+| # | Issue | Status | Workaround | Re-check when |
+|---|-------|--------|------------|---------------|
+| 1 | **HivemindOverlord `poe2-mcp` 1.0.0 — multiple defects.** (a) The importable module is named `src`, **not** `poe2_mcp`. (b) The packaged console-script entrypoint is broken (forgets to `await` the async server coroutine — it prints banners then exits without starting the MCP loop). (c) The server refuses to start without `SECRET_KEY` and `ENCRYPTION_KEY` env vars (pydantic raises `Field required`), and these are **not documented** in the package README. (d) The items database ships **empty** — no `populate_database.py` is included — so `search_items`, `inspect_base_item`, and `list_all_base_items` fail with `no such table: datc64.baseitemtypes`. | **Confirmed** (verified 29 May 2026). Partially usable. | Launch via `python -m src.mcp_server` (the `__main__` async loop works) instead of the console script. Supply locally-generated `SECRET_KEY` / `ENCRYPTION_KEY` env vars in the `poe2-optimizer` block of `.mcp.json` (never commit them, never reuse across machines). The 28+ tools backed by `FreshDataProvider` work normally; only the three item-DB tools above are broken — for base-item / item data use the live-fetch tools (`poe2_db_lookup`, `poe2_wiki_*`) instead. | A new `poe2-mcp` release ships on PyPI, or upstream adds a `populate_database.py` / pre-populated DB, or fixes the console-script entrypoint. Re-run `python -m src.mcp_server` and call `search_items` to check whether the items table is populated. |
+| 2 | **Trade-auth CLI does not exist.** The command `python -m poe2_mcp.scripts.setup_trade_auth` (referenced as the way to set up official trade-site auth) **is not a real module path** — it cannot be run. | **Confirmed** (verified 29 May 2026). | Use the in-Claude **`setup_trade_auth` MCP tool** (exposed by the `poe2-optimizer` server) instead of any standalone CLI. The interactive browser login is driven through the MCP tool, not a shell command. | A future `poe2-mcp` release actually ships a `setup_trade_auth` script/module. Re-test by attempting `python -m poe2_mcp.scripts.setup_trade_auth` and confirming the module resolves. |
+| 3 | **poe.ninja / poe2scout indexing lag at league start (~6–24h).** At launch, the price/market tools return **empty results for `league="Runes of Aldur"`** because the data providers have not finished indexing the fresh economy. The same tools return data normally for `league="Standard"`. | **Confirmed** (verified 29 May 2026, league launch day). Transient / time-limited. | For sanity-checking that a price tool *works*, query `league="Standard"`. For actual Runes of Aldur prices, wait until indexing catches up (roughly 6–24h, and prices stay volatile for the first 48–72h regardless). Always surface the volume/empty-data caveat to the user during launch week. | 24–48h into the league (i.e. from ~31 May 2026). Re-run a price tool (e.g. `poe2_currency_prices` / poe2scout `basic_search`) with `league="Runes of Aldur"` and confirm it now returns data. Once confirmed populated, mark this **Resolved**. |
+
+---
+
+## Status legend
+
+- **Confirmed** — reproduced this session by running the command; the issue is real as of the verified date.
+- **Transient** — a time-limited condition (e.g. league-start lag) expected to self-resolve; still must be re-checked at the trigger.
+- **Resolved** — re-verified and no longer reproducible. Keep the row for history; note the resolution date.
+
+## Maintenance note
+
+When you re-verify any entry, update its **Status**, update the **Last verified** date at the top, and briefly note what you ran. These rows are evidence, not lore — keep them honest.

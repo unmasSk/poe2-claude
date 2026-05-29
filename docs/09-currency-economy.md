@@ -32,7 +32,6 @@ The headline new resource. See `docs/04-game-mechanics-0.5.md` and `docs/07-rune
 
 - Crafted at Remnants.
 - Each Flux **swaps one elemental resistance for another of the same tier without breaking the item.**
-- Comparable to PoE 1's Harvest resistance swap.
 - Use case: you have a great item but the wrong resistance combo. Use Flux to convert.
 
 ### Runeshapes
@@ -163,10 +162,8 @@ Worth noting because it's an iconic high-value unique.
 - **New:** that line removed. Functionality reworked. [Verify specifics with `poe2_db_lookup term="Blackflame"`].
 
 ### Mageblood (new in 0.5)
-- Brought over from PoE 1 by name.
-- Functionality **adapted for PoE 2** — PoE 2 has no utility flask system equivalent to PoE 1.
 - **[Inference]** Likely applies persistent Enchantment effects or modifies skill behavior.
-- Exact mechanics: verify with `poe2_db_lookup term="Mageblood"` post-launch.
+- Exact mechanics: verify with `poe2_db_lookup term="Mageblood"` post-launch — do not assume; confirm live.
 
 ---
 

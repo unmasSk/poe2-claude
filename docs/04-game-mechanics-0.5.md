@@ -68,13 +68,13 @@ Each additional Runeshape used increases the number of waves and adds runic modi
 
 A new crafting currency. **5 different types.** Used to add **non-standard modifiers** to items — modifiers that normally can't roll on that item type.
 
-Comparable to PoE 1's Harvest crafting in spirit (but not mechanics). Useful for adding rare mods to crafted gear without breaking the item.
+Useful for adding rare mods to crafted gear without breaking the item.
 
 ---
 
 ## Fluxes (Resistance Swap)
 
-Crafted at Remnants. Three different Flux types let you **swap one elemental resistance for another of the same tier without breaking the item.** Comparable to PoE 1's Harvest resistance swap.
+Crafted at Remnants. Three different Flux types let you **swap one elemental resistance for another of the same tier without breaking the item.**
 
 ---
 

@@ -32,7 +32,7 @@
 - **Runic Alloys** — new crafting currency for adding non-standard modifiers (5 types).
 - **Fragment Stash Tab** — new premium tab for Fragments (Breach Splinters, Simulacrums, Audience with the King), Inscribed Ultimatums, Baryas, and Tablets.
 - **Voices in PoE2** — first appearance, with rune-related jewel sockets that don't cost passive points.
-- **Mageblood** introduced (carry-over name from PoE1, function adapted to PoE2; flask-utility-based effects).
+- **Mageblood** introduced — flask-utility-based effects; verify exact 0.5 function with `poe2_db_lookup term="Mageblood"`.
 - **Atziri's Acuity reworked** — now grants 150-200% Armour, 100-150 max Life, 10% Physical Attack Leech as Life, 10% Physical Hit causes Blood Loss + Vaal Pact, and grants Herald of the Royal Queen.
 - **Campaign streamlined** — clearer navigation, smoother Act 3, simplified objectives (e.g. auto-solving Waterways pressure pads), reduced monster density in later campaign and Interludes.
 - **Free passive tree refund** for all pre-existing characters.
