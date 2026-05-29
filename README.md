@@ -21,8 +21,8 @@ This pack gives Claude Code:
 ## Install (3 commands, then Claude does the rest)
 
 ```bash
-git clone <REPO_URL_HERE> poe2-claude-pack
-cd poe2-claude-pack
+git clone https://github.com/unmasSk/poe2-claude.git
+cd poe2-claude
 claude
 ```
 
@@ -41,10 +41,10 @@ Total interaction: a few `y` confirmations and one email. Maybe 5 minutes total 
 ## What's in this repo
 
 ```
-poe2-claude-pack/
+poe2-claude/
 ├── CLAUDE.md                       # Project memory + auto-setup instructions
 ├── README.md                       # This file
-├── .mcp.json                       # MCP config (rewritten by Claude on first run)
+├── .mcp.json.canonical             # MCP config template (Claude copies it to .mcp.json on first run)
 ├── .gitignore
 ├── docs/                           # Modular knowledge base
 │   ├── PROJECT.md                  # Project manifesto — what & why
@@ -122,7 +122,7 @@ cd poe2scout-mcp && npm install && npm run build && cd ..
 
 pip3 install poe2-mcp
 
-cd ../poe2-claude-pack
+cd ../poe2-claude
 # Edit .mcp.json: replace ABSOLUTE_PATH_TO_sergeyklay_poe2-mcp-server with
 # the absolute path to ../mcps/poe2-mcp-server, same for poe2scout, and
 # replace YOUR_EMAIL_HERE with your email.

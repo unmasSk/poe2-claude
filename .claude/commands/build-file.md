@@ -62,7 +62,7 @@ Generate a minimal valid `.build` skeleton for the given ascendancy.
 1. Map the ascendancy name (Spanish or English) to the canonical ID using `docs/13-build-file-format.md` §6. Use `[Inference]` warnings for IDs marked as such.
 2. Output a JSON file with:
    - `name`: "<Ascendancy> Template"
-   - `author`: "poe2-claude-pack"
+   - `author`: "poe2-claude"
    - `description`: a starter description explaining this is a skeleton, in both languages if the user is bilingual.
    - `ascendancy`: the inferred ID.
    - `passives`: empty array (`[]`).

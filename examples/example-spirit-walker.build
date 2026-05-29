@@ -1,6 +1,6 @@
 {
   "name": "Spirit Walker Starter Template (Caminante Espiritual)",
-  "author": "poe2-claude-pack",
+  "author": "poe2-claude",
   "description": "<l>{<gold>{Spirit Walker Starter Template}}\n\n<m>{<silver>{This is a starter template, NOT a finished build.}}\n\n<m>{<red>{IMPORTANT}}: most node and skill IDs in this file are <red>{[Inference]} based on naming patterns. The Spirit Walker ascendancy is brand-new in patch 0.5 and the canonical IDs from repoe-fork/poe2 should be checked before relying on this file.\n\n<m>{<silver>{Plantilla inicial de Caminante Espiritual, no es una build terminada.}}\n\n<m>{<red>{IMPORTANTE}}: muchos IDs en este fichero son <red>{[Inferencias]} basadas en patrones de nomenclatura. La ascendencia Caminante Espiritual es nueva en el parche 0.5; verificar los IDs canónicos en repoe-fork/poe2 antes de usar este fichero en serio.\n\n<grey>{Usage / Uso\n-------------------\n1. Drop into Documents/My Games/Path of Exile 2/BuildPlanner/\n2. Restart the client to ensure the File Watcher picks it up\n3. Open the Passive Tree / Skill Gem panel in-game to see the hints}",
   "ascendancy": "Huntress3",
   "passives": [
