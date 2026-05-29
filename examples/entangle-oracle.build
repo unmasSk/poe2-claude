@@ -1,0 +1,80 @@
+{
+  "name": "Entangle Oracle (Druid) — Plant/Storm",
+  "author": "poe2-claude",
+  "ascendancy": "Druid1",
+  "description": "<l>{<gold>{Entangle Oracle — Plant + Storm Druid}}\n\n<m>{<silver>{Physical Plant spells (Entangle + Thrashing Vines) made Overgrown by Thunderstorm (Storm), scaled by the Wildsurge Incantation keystone (+50% more to Storm & Plant spells). Cast on Critical auto-triggers Thunderstorm to keep plants watered.}}\n\n<m>{<red>{IMPORTANT / IMPORTANTE}}: This skeleton is built from VERIFIED sources (poe2db live, and a real poe.ninja Oracle PoB: poe.ninja/poe2/pob/1612e, checked 29 May 2026) — but two things are <red>{NOT fully verified}:\n1. <red>{Ascendancy ID 'Druid1'} is an <red>{[Inference]} — the canonical Oracle/Druid ID was not confirmed against repoe-fork/poe2. Verify before relying on it.\n2. <red>{The passive tree is NOT included} — the PoB decoder returned 0 allocated nodes, so node IDs could not be extracted. Allocate the tree in-game from the guide, or import the PoB into Path of Building 2 for the real tree.\n\n<grey>{Sources / Fuentes\n-------------------\n- Maxroll: maxroll.gg/poe2/build-guides/entangle-oracle-build-guide\n- Real PoB (lvl 94 Oracle, Entangle+Thrashing Vines+Thunderstorm): poe.ninja/poe2/pob/1612e\n- Skill data verified live on poe2db.tw (29 May 2026)}\n\n<grey>{Usage / Uso\n-------------------\n1. Drop into Documents/My Games/Path of Exile 2/BuildPlanner/\n2. Restart the client so the File Watcher picks it up\n3. This file carries the skill/support plan + gear-slot hints. Allocate the passive tree yourself (see the guide).}",
+  "passives": [],
+  "skills": [
+    {
+      "id": "Metadata/Items/Gems/SkillGemEntangle",
+      "additional_text": "<m>{<gold>{Main DoT/hit — Physical Plant spell}}\n<grey>{Verified ID: EntanglePlayer (poe2db/optimizer). Supports below: names from the real poe.ninja PoB, support IDs are <red>{[Inference]} — verify in-game.}",
+      "support_skills": [
+        "Metadata/Items/Gems/SupportGemBranchingFissures",
+        "Metadata/Items/Gems/SupportGemAcceleratedGrowth",
+        "Metadata/Items/Gems/SupportGemRapidCasting",
+        "Metadata/Items/Gems/SupportGemMobility",
+        "Metadata/Items/Gems/SupportGemHeft"
+      ]
+    },
+    {
+      "id": "Metadata/Items/Gems/SkillGemThrashingVines",
+      "additional_text": "<m>{<silver>{Bigger vines, single-target/boss — Physical Plant. 50% more damage when Overgrown (wet).}}\n<grey>{Verified ID: ThrashingVinesPlayer. Support IDs <red>{[Inference]}.}",
+      "support_skills": [
+        "Metadata/Items/Gems/SupportGemConcentratedArea",
+        "Metadata/Items/Gems/SupportGemHeft",
+        "Metadata/Items/Gems/SupportGemBlindside",
+        "Metadata/Items/Gems/SupportGemRapidCasting",
+        "Metadata/Items/Gems/SupportGemAcceleratedGrowth"
+      ]
+    },
+    {
+      "id": "Metadata/Items/Gems/SkillGemThunderstorm",
+      "additional_text": "<m>{<blue>{Storm — Drenches enemies (Overgrows plants, +shock/freeze). Auto-triggered by Cast on Critical.}}\n<grey>{Verified ID: ThunderstormPlayer. Support IDs <red>{[Inference]}.}",
+      "support_skills": [
+        "Metadata/Items/Gems/SupportGemProlongedDuration",
+        "Metadata/Items/Gems/SupportGemMagnifiedEffect",
+        "Metadata/Items/Gems/SupportGemShockConduction",
+        "Metadata/Items/Gems/SupportGemOvercharge",
+        "Metadata/Items/Gems/SupportGemExpanse"
+      ]
+    }
+  ],
+  "inventory_slots": [
+    {
+      "inventory_id": "Weapon1",
+      "additional_text": "<silver>{Staff}\n\n<grey>{Stat Priority\n-------------------\n1. +Level of (Physical/all) Spell Skill Gems\n2. Increased Spell Damage / Physical\n3. Cast Speed\n4. Spirit\n\nEndgame option from the guide: <gold>{Atziri's Rule} (staff) — 'Spells which cost Life Gain 80-120% of Damage as Extra Physical'. Verified on poe2db.}"
+    },
+    {
+      "inventory_id": "Helm1",
+      "additional_text": "<red>{Energy Shield base (real PoB used ES gear)}\n\n<grey>{1. Max Life / ES\n2. Resistances\n3. Spirit / +levels if available}"
+    },
+    {
+      "inventory_id": "BodyArmour1",
+      "additional_text": "<red>{Energy Shield base}\n\n<grey>{1. Max Life / ES\n2. Resistances\n3. Increased Spell Damage}"
+    },
+    {
+      "inventory_id": "Gloves1",
+      "additional_text": "<grey>{1. Cast Speed\n2. Increased Spell/Physical Damage\n3. Life / Resistances}"
+    },
+    {
+      "inventory_id": "Boots1",
+      "additional_text": "<grey>{1. Movement Speed\n2. Life / ES\n3. Resistances}"
+    },
+    {
+      "inventory_id": "Belt1",
+      "additional_text": "<silver>{Any Belt}\n\n<grey>{1. Life\n2. Resistances\n3. Charm slots / Mana}"
+    },
+    {
+      "inventory_id": "Amulet1",
+      "additional_text": "<grey>{1. +Level of Spell Skill Gems\n2. Spirit\n3. Cast Speed\n4. Resistances}"
+    },
+    {
+      "inventory_id": "Ring1",
+      "additional_text": "<grey>{1. Increased Spell/Physical Damage\n2. Life / Resistances\n3. Mana}"
+    },
+    {
+      "inventory_id": "Ring2",
+      "additional_text": "<grey>{1. Increased Spell/Physical Damage\n2. Life / Resistances\n3. Mana}"
+    }
+  ]
+}

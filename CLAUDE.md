@@ -186,6 +186,7 @@ This project has detailed documentation in `docs/`. **Do not load everything at 
 | Ascendancy Trials (Sekhemas vs Chaos, Honour, 0.5 changes) | `docs/15-ascendancy-trials.md` |
 | Known upstream tooling bugs/limitations + when to re-verify | `docs/KNOWN-ISSUES.md` |
 | **DPS / damage — how the calculation works, what Claude can/can't compute** | **`docs/18-dps-and-damage.md`** (read before any DPS question) |
+| **Reading a full PoB build (tree/items/mods + PoB's computed DPS) — "PoB2 → Claude"** | **`docs/19-pob-deep-read.md`** (use `tools/pob_extract.py` on a pobb.in URL) |
 
 **Mandatory first reads on any new session:** `docs/PROJECT.md` (the "lore" of the project — what this pack is and how to think in it), `docs/02-mcp-quirks.md`, and `docs/12-anti-hallucination.md`. They are short. They prevent the most common failure modes.
 

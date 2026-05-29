@@ -157,7 +157,10 @@ poe2-claude/
 │   ├── 14-campaign-guide.md        # Campaign router (Acts 1-4 + trials), wiki-sourced
 │   ├── 15-ascendancy-trials.md     # Sekhemas vs Chaos trials, wiki-sourced
 │   ├── 18-dps-and-damage.md        # How DPS maths works + what Claude can/can't compute
+│   ├── 19-pob-deep-read.md         # "PoB2 -> Claude": read a full build from a pobb.in URL
 │   └── KNOWN-ISSUES.md             # Verified upstream tooling limitations (team-shared)
+├── tools/
+│   └── pob_extract.py              # Extracts full PoB build (tree/items/mods + computed stats)
 ├── LICENSE                         # MIT
 ├── examples/
 │   ├── example-titan-warrior.build  # Official GGG sample

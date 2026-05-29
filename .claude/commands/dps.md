@@ -22,19 +22,27 @@ and verify any 0.5-changed number live with `poe2_db_lookup` / the wiki.
 
 ## Mode A — the user has a Path of Building build (preferred for real numbers)
 
-Trigger: $ARGUMENTS contains a `pobb.in` URL, a `poe.ninja/poe2/pob/...` URL, or a local
-build name.
+Trigger: $ARGUMENTS contains a `pobb.in` URL (or a `poe.ninja/poe2/pob/...` URL — but see below).
 
-1. `poe2_pob_decode` on the URL/name. **Do NOT ask for a raw base64 export code** — it
-   corrupts in transit (`docs/02-mcp-quirks.md`); ask for a pobb.in/poe.ninja URL instead.
-2. Report the DPS **as PoB computed it**, naming the exact configuration PoB assumed
-   (which skill, was it the "full DPS" / combined hit, were flasks/charges/buffs active,
-   single-target vs clear). **A PoB DPS number is only meaningful with its assumptions** —
-   always state them, don't quote a bare number.
-3. If the user gave two builds, or wants a before/after, use `poe2_pob_compare` and report
-   item-by-item / gem / tree differences and how they move damage.
-4. To *improve* it: identify the biggest missing multiplier layer (see §C) and say what to
-   change. Re-import the modified PoB to confirm — let PoB recompute, don't assert the gain.
+1. **Deep-read it** (the real method — see `docs/19-pob-deep-read.md`):
+   `python tools/pob_extract.py https://pobb.in/<id>`. This returns the FULL build — passive
+   tree, every item mod, sockets, gems, **and the ~100 stats PoB already computed**
+   (`AverageDamage`, `TotalDPS`, `CombinedDPS`, `CritChance`, `CritMultiplier`, etc.).
+   - Do NOT rely on `poe2_pob_decode` alone — it's shallow (names only, no tree/mods/stats;
+     `KNOWN-ISSUES.md` #6). The deep-read is what makes accurate analysis possible.
+   - **pobb.in only.** poe.ninja PoB URLs serve HTML, not the code — ask the user to re-upload
+     to pobb.in (PoB2: *Import/Export → Upload to pobb.in*). **Do NOT paste raw base64** — it
+     corrupts in transit (`docs/02-mcp-quirks.md`).
+2. **Anchor on PoB's computed number.** Report `AverageDamage` / `TotalDPS` / `CombinedDPS`
+   exactly as PoB calculated it, naming the config PoB assumed (which skill, buffs/charges/
+   flasks on, single-target vs combined). A bare number is meaningless without its assumptions.
+3. **Scrutinise every layer for upgrades** (this is the value — see §C): gems/supports, passive
+   tree (dead/low nodes + nearby notables), item mods (missing affixes, empty sockets, wrong
+   bases), crit balance, penetration, defences. Hunt across ALL of them, not just gems.
+4. **Propose a concrete change + predicted direction/magnitude.** Then the user applies it in
+   PoB2 and reports the new number. If it improves, keep it. **PoB confirms; Claude proposes.**
+   For a precise *pre-change* prediction, ask for the Calcs-tab breakdown.
+5. Before/after of two builds → `poe2_pob_compare`, or deep-read both and diff the stats.
 
 ## Mode B — no PoB build (diagnosis & approximation only)
 
