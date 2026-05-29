@@ -185,6 +185,7 @@ This project has detailed documentation in `docs/`. **Do not load everything at 
 | Campaign questions (acts, bosses, level/res targets, where trials unlock) | `docs/14-campaign-guide.md` (router — routes to live wiki) |
 | Ascendancy Trials (Sekhemas vs Chaos, Honour, 0.5 changes) | `docs/15-ascendancy-trials.md` |
 | Known upstream tooling bugs/limitations + when to re-verify | `docs/KNOWN-ISSUES.md` |
+| **DPS / damage — how the calculation works, what Claude can/can't compute** | **`docs/18-dps-and-damage.md`** (read before any DPS question) |
 
 **Mandatory first reads on any new session:** `docs/PROJECT.md` (the "lore" of the project — what this pack is and how to think in it), `docs/02-mcp-quirks.md`, and `docs/12-anti-hallucination.md`. They are short. They prevent the most common failure modes.
 
@@ -215,6 +216,7 @@ These are in `.claude/commands/`. Type `/` in Claude Code to see the full list.
 - `/meta [ascendancy]` — current 0.5 ladder meta snapshot (Note: unreliable in the first 24-48h of league).
 - `/upgrade-stat <stat>` — workflow to find the cheapest way to gain a stat on a character.
 - `/build-file <op> <args>` — read, validate, translate, template, annotate, merge, or convert `.build` planner files. See `docs/13-build-file-format.md`.
+- `/dps [pob-url | character]` — interpret a Path of Building build's DPS, or diagnose/approximate damage. Never invents a final number (PoB computes, Claude interprets). See `docs/18-dps-and-damage.md`.
 
 ---
 

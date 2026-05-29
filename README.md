@@ -106,6 +106,7 @@ Type `/` in Claude Code to see them. One use-case each:
 | `/upgrade-stat` | Cheapest way to gain a stat / Forma más barata de subir un stat | `/upgrade-stat fire resistance` |
 | `/wiki` | Search the wiki + fetch the article / Busca en la wiki y trae el artículo | `/wiki Energy Shield` |
 | `/build-file` | Read/validate/translate/template `.build` files / Operaciones sobre `.build` | `/build-file read examples/example-titan-warrior.build` |
+| `/dps` | Interpret a PoB build's DPS or diagnose damage / Interpreta el DPS de un PoB o diagnostica daño | `/dps https://pobb.in/xxxx` |
 
 ### What Claude CANNOT do here / Lo que Claude NO puede hacer aquí
 
@@ -155,6 +156,7 @@ poe2-claude/
 │   ├── 13-build-file-format.md     # .build planner JSON format + JSON Schema
 │   ├── 14-campaign-guide.md        # Campaign router (Acts 1-4 + trials), wiki-sourced
 │   ├── 15-ascendancy-trials.md     # Sekhemas vs Chaos trials, wiki-sourced
+│   ├── 18-dps-and-damage.md        # How DPS maths works + what Claude can/can't compute
 │   └── KNOWN-ISSUES.md             # Verified upstream tooling limitations (team-shared)
 ├── LICENSE                         # MIT
 ├── examples/
