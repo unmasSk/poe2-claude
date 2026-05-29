@@ -1,0 +1,79 @@
+{
+  "name": "Spirit Walker Starter Template (Caminante Espiritual)",
+  "author": "poe2-claude-pack",
+  "description": "<l>{<gold>{Spirit Walker Starter Template}}\n\n<m>{<silver>{This is a starter template, NOT a finished build.}}\n\n<m>{<red>{IMPORTANT}}: most node and skill IDs in this file are <red>{[Inference]} based on naming patterns. The Spirit Walker ascendancy is brand-new in patch 0.5 and the canonical IDs from repoe-fork/poe2 should be checked before relying on this file.\n\n<m>{<silver>{Plantilla inicial de Caminante Espiritual, no es una build terminada.}}\n\n<m>{<red>{IMPORTANTE}}: muchos IDs en este fichero son <red>{[Inferencias]} basadas en patrones de nomenclatura. La ascendencia Caminante Espiritual es nueva en el parche 0.5; verificar los IDs canónicos en repoe-fork/poe2 antes de usar este fichero en serio.\n\n<grey>{Usage / Uso\n-------------------\n1. Drop into Documents/My Games/Path of Exile 2/BuildPlanner/\n2. Restart the client to ensure the File Watcher picks it up\n3. Open the Passive Tree / Skill Gem panel in-game to see the hints}",
+  "ascendancy": "Huntress3",
+  "passives": [
+    {
+      "id": "AscendancyHuntress3Notable1",
+      "additional_text": "<m>{<green>{The Natural Order} <silver>{(EN) — grants Tame Beast on Unique Beasts.}}\n<m>{<green>{El Orden Natural} <silver>{(ES) — concede Domar Bestia sobre Bestias Únicas.}}\n\n<grey>{[Inference] node ID. Verify in repoe-fork/poe2.}"
+    },
+    {
+      "id": "AscendancyHuntress3Notable2",
+      "additional_text": "<m>{<green>{Wild Protector} <silver>{(EN) — summons a Bear Spirit as a second Companion.}}\n<m>{<green>{Protector Salvaje} <silver>{(ES) — invoca un Espíritu Oso como segundo Compañero.}}\n\n<grey>{[Inference] node ID.}"
+    },
+    {
+      "id": "AscendancyHuntress3Notable3",
+      "additional_text": "<m>{<green>{Vivid Stampede} <silver>{(EN) — every 20m moved grants a Vivid Wisp stack; attacking unleashes Stag Spirits.}}\n<m>{<green>{Estampida Vívida} <silver>{(ES) — cada 20m recorridos otorga un cargo de Fuego Fatuo Vívido; atacar libera Espíritus de Ciervo.}}\n\n<grey>{[Inference] node ID.}"
+    },
+    {
+      "id": "AscendancyHuntress3Notable4",
+      "additional_text": "<m>{<green>{Primal Bounty} <silver>{(EN) — Empowered Projectile Skills fire more projectiles with increased Projectile Speed.}}\n<m>{<green>{Generosidad Primigenia} <silver>{(ES) — las habilidades de proyectil empoderadas disparan más proyectiles a mayor velocidad.}}\n\n<grey>{[Inference] node ID.}"
+    },
+    {
+      "id": "AscendancyHuntress3Notable5",
+      "additional_text": "<m>{<gold>{Sacred Unity} <silver>{(EN) — bonus capstone, free to allocate if Wild Protector + Vivid Stampede + Primal Bounty are all taken.}}\n<m>{<gold>{Unidad Sagrada} <silver>{(ES) — capstone bono, gratuito si Protector Salvaje + Estampida Vívida + Generosidad Primigenia están asignados.}}\n\n<grey>{[Inference] node ID.}"
+    }
+  ],
+  "skills": [
+    {
+      "id": "Metadata/Items/Gems/SkillGemVividStampede",
+      "additional_text": "<m>{<green>{Core mobility + damage skill}} (EN)\n<m>{<green>{Habilidad principal de movilidad y daño}} (ES)\n\n<grey>{[Inference] gem metadata path. The Vivid Stampede skill is new in 0.5 — confirm the exact Metadata/Items/Gems/... path with poe2_db_lookup or by inspecting a PoB2 export of a real Spirit Walker build.}",
+      "support_skills": []
+    }
+  ],
+  "inventory_slots": [
+    {
+      "inventory_id": "Weapon1",
+      "additional_text": "<silver>{Spear or Sceptre (EN) / Lanza o Cetro (ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Physical or Elemental damage\n2. The Catha's Balance interaction — main hand weapon damage scales companion damage}"
+    },
+    {
+      "inventory_id": "BodyArmour1",
+      "additional_text": "<red>{Evasion + Energy Shield hybrid base preferred (EN)}\n<red>{Base híbrida Evasión + Escudo de Energía preferida (ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Life + ES\n2. Resistances (cap to 75%)\n3. Apply Verisium Runeforging to add Runic Ward\n4. Companion damage / Idol slot if available}"
+    },
+    {
+      "inventory_id": "Helm1",
+      "additional_text": "<red>{Evasion base (EN/ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Life\n2. Resistances\n3. Companion damage}"
+    },
+    {
+      "inventory_id": "Gloves1",
+      "additional_text": "<red>{Evasion + ES base (EN/ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Attack Speed\n2. Life + ES\n3. Resistances}"
+    },
+    {
+      "inventory_id": "Boots1",
+      "additional_text": "<red>{Evasion base (EN/ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Movement Speed (>= 30%)\n2. Life + ES\n3. Resistances}"
+    },
+    {
+      "inventory_id": "Belt1",
+      "additional_text": "<silver>{Any belt (EN) / Cualquier cinturón (ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Life\n2. Resistances\n3. Flask charge generation}"
+    },
+    {
+      "inventory_id": "Amulet1",
+      "additional_text": "<silver>{Any amulet (EN/ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Level of all skills / minion skills\n2. Resistances\n3. Companion damage}"
+    },
+    {
+      "inventory_id": "Ring1",
+      "additional_text": "<silver>{Any ring (resistance base) (EN/ES)}\n\n<grey>{Priority / Prioridad\n-------------------\n1. Life\n2. Resistances\n3. Flat damage to attacks}"
+    },
+    {
+      "inventory_id": "Ring2",
+      "additional_text": "<silver>{Any ring (resistance base) (EN/ES)}\n\n<grey>{Same priority as Ring1}"
+    },
+    {
+      "inventory_id": "Weapon1",
+      "unique_name": "Sylvan's Effigy",
+      "level_interval": [80, 100],
+      "additional_text": "<gold>{Endgame target}: Sylvan's Effigy removes the Companion limit and grants 85% more Companion damage vs Marked targets.\n\n<gold>{Objetivo endgame}: Efigie de Sylvan elimina el límite de Compañeros y otorga 85% más de daño de Compañeros contra objetivos Marcados.\n\n<red>{Only drops from the Ritual pinnacle boss — expect to trade for one.}\n<red>{Solo dropea del jefe pináculo de Ritual — espera tener que comprarla.}"
+    }
+  ]
+}

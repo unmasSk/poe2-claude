@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "poe2": {
+      "command": "node",
+      "args": [
+        "ABSOLUTE_PATH_TO_sergeyklay_poe2-mcp-server/dist/index.js"
+      ]
+    },
+    "poe2-optimizer": {
+      "command": "python",
+      "args": [
+        "-m",
+        "src.mcp_server"
+      ],
+      "env": {
+        "SECRET_KEY": "GENERATED_PER_USER_HEX_64",
+        "ENCRYPTION_KEY": "GENERATED_PER_USER_URLSAFE_32"
+      }
+    },
+    "poe2scout": {
+      "command": "node",
+      "args": [
+        "ABSOLUTE_PATH_TO_vanzan01_poe2scout-mcp/dist/index.js"
+      ],
+      "env": {
+        "POE2SCOUT_CONTACT_EMAIL": "YOUR_EMAIL_HERE"
+      }
+    }
+  }
+}

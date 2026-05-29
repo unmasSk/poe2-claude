@@ -1,0 +1,26 @@
+# Personal context — never commit account names, character names, or build secrets
+CLAUDE.local.md
+user/*.md
+!user/README.md
+!user/_template.md
+
+# Local MCP config — holds per-user paths, email and generated crypto keys. Never commit.
+# The committed template is .mcp.json.canonical (with placeholders); the setup check
+# turns it into a working .mcp.json on first run.
+.mcp.json
+!.mcp.json.canonical
+
+# Local Claude Code state
+.claude/settings.local.json
+.claude/projects/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+*~
