@@ -105,6 +105,18 @@ Three MCP servers are configured. Use this file to pick the right tool for each 
 - Set `SECRET_KEY` and `ENCRYPTION_KEY` as `env` vars in the `poe2-optimizer` block of `.mcp.json`. Generate them locally with `python -c "import secrets; print(secrets.token_hex(32)); print(secrets.token_urlsafe(32))"`. Each user generates their own; never commit.
 - Setup check in CLAUDE.md §0.1 verifies the package is installed via `importlib.metadata.distribution('poe2-mcp')` (the only reliable way given the broken module name) and detects the `GENERATED_PER_USER` placeholder to force key generation on first run.
 
+**Items database empty by default (unfixable from the user side):**
+
+The package's `health_check` warns "Items database empty - run populate_database.py". That script does NOT ship with the PyPI package (verified 29 May 2026, version 1.0.0). The package also contains no JSON/CSV/SQLite data files to import. As a result, the following tools always fail with `no such table: datc64.baseitemtypes`:
+
+- `search_items`
+- `inspect_base_item`
+- `list_all_base_items`
+
+All other optimizer tools work normally because they use the `FreshDataProvider` component which loads passive nodes, keystones, notables, support gems, and skill gems from in-package code (not from the empty SQLite tables). The 28+ working tools cover everything except base-item-specific queries.
+
+When a user asks something that would require these broken tools (e.g. "list all helmets with ES"), tell them this is a known upstream limitation and suggest they use poe2db.tw directly via web search or check the in-game item filter.
+
 ---
 
 ## Server C: `poe2scout` (vanzan01/poe2scout-mcp)

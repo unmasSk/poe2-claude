@@ -208,6 +208,17 @@ These are in `.claude/commands/`. Type `/` in Claude Code to see the full list.
 - **The Recombinator is removed for this league.** Any pre-0.5 build guide that relies on Recombination is obsolete. Flag this if you see the user planning around it.
 - **Fresh-economy pricing window:** roughly the first 48-72 hours have wildly volatile prices. Volume-based price-check warnings are extra important.
 
+### Indexing lag on day 1
+
+poe.ninja and poe2scout typically take 6-24 hours to start indexing a new league. During this window, `poe2_item_price`, `poe2_currency_check`, `poe2_currency_prices`, and `poe2scout/*` price tools will return empty results or "No items found" when queried with `league='Runes of Aldur'`, even for items that clearly exist in-game.
+
+Verified behavior observed at league launch (29 May 2026): tools responded correctly to queries against the `Standard` league but returned empty results for `Runes of Aldur` during the first ~24h.
+
+When this happens:
+- Tell the user the price lookup is not failing — the indexing source just hasn't caught up yet.
+- Optionally, fall back to a `Standard` lookup to show approximate pre-league prices, with a clear warning that the new-league economy will diverge significantly.
+- Don't fabricate a price from memory or PoE 1.
+
 ---
 
 ## 6. What you CANNOT do (set expectations honestly)
